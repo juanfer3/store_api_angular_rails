@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181105222017) do
+ActiveRecord::Schema.define(version: 20181107035527) do
+
+  create_table "articulo_images", force: :cascade do |t|
+    t.integer "articulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.integer "imagen_file_size"
+    t.datetime "imagen_updated_at"
+    t.index ["articulo_id"], name: "index_articulo_images_on_articulo_id"
+  end
 
   create_table "articulos", force: :cascade do |t|
     t.integer "categoria_id"
@@ -23,10 +34,32 @@ ActiveRecord::Schema.define(version: 20181105222017) do
     t.index ["categoria_id"], name: "index_articulos_on_categoria_id"
   end
 
+  create_table "articulos_imagen", force: :cascade do |t|
+    t.integer "articulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.integer "imagen_file_size"
+    t.datetime "imagen_updated_at"
+    t.index ["articulo_id"], name: "index_articulos_imagen_on_articulo_id"
+  end
+
   create_table "categorias", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contenedores_articulos_imagenes", force: :cascade do |t|
+    t.integer "articulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.integer "imagen_file_size"
+    t.datetime "imagen_updated_at"
+    t.index ["articulo_id"], name: "index_contenedores_articulos_imagenes_on_articulo_id"
   end
 
   create_table "users", force: :cascade do |t|

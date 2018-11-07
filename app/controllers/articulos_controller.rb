@@ -46,6 +46,8 @@ class ArticulosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def articulo_params
-      params.require(:articulo).permit(:categoria_id, :nombre, :descripcion, :precio, :cantidad)
+      params.require(:articulo).permit(:categoria_id, :nombre, :descripcion, :precio, :cantidad,
+        articulo_images_attributes:[:articulo_id]
+        )
     end
 end

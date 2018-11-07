@@ -13,6 +13,7 @@
     )
 end
 =end
+=begin
 categorias = Categoria.all
 categorias.each do |categoria|
     5.times do |num|
@@ -25,4 +26,15 @@ categorias.each do |categoria|
             cantidad: 5
         )
     end
+end
+=end
+
+
+articulos = Articulo.all
+articulos.each do |ar|
+
+    ArticuloImage.create!(
+        articulo_id: ar.id
+    )
+
 end

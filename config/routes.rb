@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :articulo_images
+  resources :articulos_imagen
   # Home controller routes.
   root   'home#index'
   get    'auth'            => 'home#auth'

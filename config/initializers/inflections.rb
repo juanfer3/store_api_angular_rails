@@ -25,5 +25,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
         inflect.irregular 'cantidad', 'cantidades'
         inflect.irregular 'total', 'totales'
         inflect.irregular 'articulo', 'articulos'
+        inflect.irregular 'imagen', 'imagenes'
+
 
 end
